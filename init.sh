@@ -1,9 +1,11 @@
 #!/bin/bash
 apt-get update && apt-get upgrade -y
-apt-get install sudo 
+apt-get install sudo software-properties-common
 usermod -aG sudo dmwoods
 
 # Sorry RMS
+apt-add-repository non-free
+apt-get update
 apt-get install firmware-iwlwifi
 modprobe -r iwlwifi; modprobe iwlwifi
 apt-get install vim xorg firefox-esr net-tools curl wget git i3 dnsutils
