@@ -10,15 +10,16 @@ apt-get update
 apt-get install -y firmware-iwlwifi
 modprobe -r iwlwifi; modprobe iwlwifi
 apt-get install -y vim xorg firefox-esr net-tools curl wget git i3 dnsutils
-apt-get install -y network-manager-gnome network-manager 
+apt-get install -y network-manager-gnome network-manager ranger scrot imagemagick 
 
 # Appearance stuff
-apt-get install -y lxappearance feh rofi neofetch
+apt-get install -y lxappearance feh rofi neofetch i3blocks compton
 
 # Grab configs from git
 git clone https://github.com/dmwoods38/dotfiles.git
 cp -r dotfiles/.* /home/$USER
 chown -R $USER:$USER /home/$USER
 
-# Cleanup dotfiles
+# Cleanup files
 rm -rf dotfiles
+rm /home/$USER/Readme.md
