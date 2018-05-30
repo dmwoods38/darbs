@@ -8,7 +8,7 @@ usermod -aG sudo $USER
 apt-get install -y vim net-tools curl wget git i3 dnsutils vim-pathogen dconf-editor
 
 # Appearance stuff
-apt-get install -y neofetch i3blocks
+apt-get install -y neofetch i3blocks rxvt-unicode
 apt-get install -y fonts-font-awesome xfonts-terminus
 
 # Grab configs from git
