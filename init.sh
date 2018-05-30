@@ -7,6 +7,17 @@ usermod -aG sudo $USER
 
 apt-get install -y vim net-tools curl wget git i3 dnsutils vim-pathogen dconf-editor
 
+# Allow repo installation over HTTPS
+apt-get install -y apt-transport-https ca-certificates gnupg2 software-properties-common
+# Add Docker GPG key
+curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+# Need to verify the GPG key
+# Add Docker repo
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian \
+	      $(lsb_release -cs) stable"
+apt-get update && apt-get install -y docker-ce
+usermod -aG docker $USER
+
 # Appearance stuff
 apt-get install -y neofetch i3blocks rxvt-unicode
 apt-get install -y fonts-font-awesome xfonts-terminus
