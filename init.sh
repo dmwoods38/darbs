@@ -3,7 +3,6 @@ USER=dmwoods
 GOVERSION=1.10.2
 ARCH=amd64
 apt-get update && apt-get upgrade -y
-apt-get install -y sudo software-properties-common
 usermod -aG sudo $USER
 
 apt-get install -y vim net-tools curl wget git i3 dnsutils vim-pathogen dconf-editor
